@@ -1,0 +1,42 @@
+{
+  "name": {
+    "message": "Tab Switch",
+    "description": "Extension name"
+  },
+  "description": {
+    "message": "Alt+Q — все вкладки списком по центру: с номерами, по окнам, с мгновенным поиском. Alt+W — прошлая вкладка.",
+    "description": "Store/manifest description"
+  },
+  "cmdOpen": {
+    "message": "Открыть переключатель вкладок"
+  },
+  "cmdToggle": {
+    "message": "На прошлую вкладку и обратно"
+  },
+  "placeholder": {
+    "message": "Вкладки",
+    "description": "Search field placeholder and fallback window title"
+  },
+  "thisWindow": {
+    "message": "Это окно",
+    "description": "Group header for the current window"
+  },
+  "otherWindow": {
+    "message": "Окно $N$ · $TITLE$",
+    "description": "Group header for another window",
+    "placeholders": {
+      "N": {
+        "content": "$1"
+      },
+      "TITLE": {
+        "content": "$2"
+      }
+    }
+  },
+  "nothing": {
+    "message": "Ничего не найдено"
+  },
+  "untitled": {
+    "message": "Без названия"
+  }
+}

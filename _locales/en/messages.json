@@ -1,0 +1,42 @@
+{
+  "name": {
+    "message": "Tab Switch",
+    "description": "Extension name"
+  },
+  "description": {
+    "message": "Alt+Q: every tab in one centered list, numbered and grouped by window, with instant search. Alt+W: previous tab.",
+    "description": "Store/manifest description"
+  },
+  "cmdOpen": {
+    "message": "Open the tab switcher"
+  },
+  "cmdToggle": {
+    "message": "Previous tab and back"
+  },
+  "placeholder": {
+    "message": "Tabs",
+    "description": "Search field placeholder and fallback window title"
+  },
+  "thisWindow": {
+    "message": "This window",
+    "description": "Group header for the current window"
+  },
+  "otherWindow": {
+    "message": "Window $N$ · $TITLE$",
+    "description": "Group header for another window",
+    "placeholders": {
+      "N": {
+        "content": "$1"
+      },
+      "TITLE": {
+        "content": "$2"
+      }
+    }
+  },
+  "nothing": {
+    "message": "Nothing found"
+  },
+  "untitled": {
+    "message": "Untitled"
+  }
+}
