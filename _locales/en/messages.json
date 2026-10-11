@@ -38,5 +38,11 @@
   },
   "untitled": {
     "message": "Untitled"
+  },
+  "cmdLeft": {
+    "message": "Tab to the left"
+  },
+  "cmdRight": {
+    "message": "Tab to the right"
   }
 }

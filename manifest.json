@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_name__",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "__MSG_description__",
   "minimum_chrome_version": "121",
   "background": {
@@ -25,6 +25,18 @@
         "default": "Alt+W"
       },
       "description": "__MSG_cmdToggle__"
+    },
+    "tab-left": {
+      "suggested_key": {
+        "default": "Alt+Left"
+      },
+      "description": "__MSG_cmdLeft__"
+    },
+    "tab-right": {
+      "suggested_key": {
+        "default": "Alt+Right"
+      },
+      "description": "__MSG_cmdRight__"
     }
   },
   "web_accessible_resources": [

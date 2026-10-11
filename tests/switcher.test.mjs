@@ -244,3 +244,16 @@ test('светлая тема Chrome — окошко светлое, тёмна
   assert.equal(dark, 'rgb(30, 30, 46)');
   assert.equal(light, 'rgb(239, 241, 245)');
 });
+
+test('Alt+← / Alt+→ — соседняя вкладка в этом окне, с края — на другой край', async () => {
+  await h.openTabs('n1', 'n2', 'n3');
+  await h.step(-1);
+  await new Promise((r) => setTimeout(r, 150));
+  assert.equal(await h.activeTitle(), 'Страница N2');
+  await h.step(-1); await h.step(-1);
+  await new Promise((r) => setTimeout(r, 150));
+  assert.equal(await h.activeTitle(), 'Страница N3', 'слева от первой — последняя');
+  await h.step(1);
+  await new Promise((r) => setTimeout(r, 150));
+  assert.equal(await h.activeTitle(), 'Страница N1', 'справа от последней — первая');
+});

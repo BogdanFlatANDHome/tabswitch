@@ -62,7 +62,6 @@ async function reloadIfChanged() {
 
 // Открыть окошко или, если оно уже открыто, сдвинуть подсветку вниз (Alt+Q ещё раз с зажатым Alt)
 async function openSwitcher() {
-  if (await reloadIfChanged()) return;
   const { popupId } = await chrome.storage.session.get('popupId');
   if (popupId) {
     try { await chrome.runtime.sendMessage({ type: 'next' }); return; } catch { /* окно закрыли */ }
@@ -124,9 +123,19 @@ async function toggleLast() {
 }
 self.toggleLast = toggleLast;
 
+// Alt+← / Alt+→ — соседняя вкладка в этом окне; с края — на другой край (как Ctrl+Tab)
+async function stepTab(d) {
+  const cur = await currentTab();
+  const tabs = await chrome.tabs.query({ windowId: cur.windowId });
+  const next = tabs.find((t) => t.index === (cur.index + d + tabs.length) % tabs.length);
+  if (next) await chrome.tabs.update(next.id, { active: true });
+}
+self.stepTab = stepTab;
+
 chrome.commands.onCommand.addListener((cmd) => {
-  const run = { 'open-switcher': openSwitcher, 'toggle-last': toggleLast }[cmd];
-  run?.().catch((e) => console.error('tabswitch:', e));
+  const run = { 'open-switcher': openSwitcher, 'toggle-last': toggleLast,
+    'tab-left': () => stepTab(-1), 'tab-right': () => stepTab(1) }[cmd];
+  (async () => { if (!(await reloadIfChanged())) await run?.(); })().catch((e) => console.error('tabswitch:', e));
 });
 
 // Действия из окошка: перейти на вкладку, закрыть вкладку

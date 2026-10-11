@@ -38,5 +38,11 @@
   },
   "untitled": {
     "message": "Без названия"
+  },
+  "cmdLeft": {
+    "message": "Вкладка слева"
+  },
+  "cmdRight": {
+    "message": "Вкладка справа"
   }
 }

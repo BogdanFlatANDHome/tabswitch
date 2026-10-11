@@ -52,6 +52,7 @@ export async function start() {
   }
   const command = () => sw.evaluate(() => self.openSwitcher());
   const toggle = () => sw.evaluate(() => self.toggleLast());
+  const step = (d) => sw.evaluate((x) => self.stepTab(x), d);
   const activeTitle = () => sw.evaluate(async () => {
     const w = await chrome.windows.getLastFocused();
     const [t] = await chrome.tabs.query({ active: true, windowId: w.id });
@@ -63,7 +64,7 @@ export async function start() {
     fs.rmSync(ext, { recursive: true, force: true });
     fs.rmSync(profile, { recursive: true, force: true });
   }
-  return { context, base, openTabs, command, toggle, activeTitle, stop, get sw() { return sw; } };
+  return { context, base, openTabs, command, toggle, step, activeTitle, stop, get sw() { return sw; } };
 }
 
 // строки списка в окошке (оно в Shadow DOM — локаторы Playwright проходят сквозь открытый shadow root)
