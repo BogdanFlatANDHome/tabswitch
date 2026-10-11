@@ -17,6 +17,7 @@ numbered like the tab strip, grouped by window, searchable as you type.
 | **Delete** / **Ctrl+Backspace** | Close the highlighted tab |
 | **Esc** | Close the list |
 | **Alt+W** | Jump to the previous tab and back |
+| **Alt+← / Alt+→** | Neighbour tab in this window (wraps around). Replaces Chrome's keyboard Back/Forward |
 
 - Current window first, other windows below under «Window 2 · <its active tab>».
 - Light and dark look follow Chrome's appearance setting, live.
@@ -61,4 +62,4 @@ MIT
 
 Быстрый минималистичный переключатель вкладок Chrome. **Alt+Q** — все вкладки одним списком по центру: с номерами,
 как в полоске вкладок, по окнам, с поиском. Держишь Alt и жмёшь Q — подсветка ниже, отпустил Alt — переход.
-**Alt+W** — на прошлую вкладку и обратно. Светлая и тёмная тема — как у Chrome.
+**Alt+W** — на прошлую вкладку и обратно. **Alt+← / Alt+→** — соседняя вкладка в этом окне. Светлая и тёмная тема — как у Chrome.
