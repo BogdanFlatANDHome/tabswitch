@@ -16,15 +16,18 @@ numbered like the tab strip, grouped by window, searchable as you type.
 | **Enter** | Switch to the tab (focuses its window) |
 | **Delete** / **Ctrl+Backspace** | Close the highlighted tab |
 | **Esc** | Close the list |
-| **Alt+W** | Jump to the previous tab and back |
-| **Alt+← / Alt+→** | Neighbour tab in this window (wraps around). Replaces Chrome's keyboard Back/Forward |
+| **Alt+W** | Close the current tab |
+| **Alt+T** | Open a new active tab |
+| **Alt+A** | Jump to the previous tab and back |
+| Assign in shortcut settings | Neighbour tab left/right in this window (wraps around) |
 
 - Current window first, other windows below under «Window 2 · <its active tab>».
 - Light and dark look follow Chrome's appearance setting, live.
 - Size never jumps: fixed when opened, unaffected by page zoom.
 - On Chrome's own pages (New Tab, `chrome://…`) extensions can't draw inside the page, so the same list opens
   as a small window over Chrome.
-- Shortcuts can be changed at `chrome://extensions/shortcuts`.
+- Shortcuts can be changed at `chrome://extensions/shortcuts`. After upgrading, clear the old Alt+W assignment for previous-tab switching and assign Alt+A to it; assign Alt+W to close and Alt+T to new tab. Chrome can retain old assignments.
+- Chrome permits four default shortcuts. Left/right neighbour commands remain available for manual assignment.
 
 ## Privacy
 
@@ -62,4 +65,6 @@ MIT
 
 Быстрый минималистичный переключатель вкладок Chrome. **Alt+Q** — все вкладки одним списком по центру: с номерами,
 как в полоске вкладок, по окнам, с поиском. Держишь Alt и жмёшь Q — подсветка ниже, отпустил Alt — переход.
-**Alt+W** — на прошлую вкладку и обратно. **Alt+← / Alt+→** — соседняя вкладка в этом окне. Светлая и тёмная тема — как у Chrome.
+**Alt+W** — закрыть текущую вкладку, **Alt+T** — новая вкладка, **Alt+A** — на прошлую и обратно.
+Команды соседних вкладок назначаются вручную в `chrome://extensions/shortcuts`. После обновления проверьте
+назначения: Chrome может сохранить старое Alt+W на переключение. Светлая и тёмная тема — как у Chrome.

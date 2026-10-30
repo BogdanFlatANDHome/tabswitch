@@ -14,6 +14,8 @@ test:
 lint:
     for f in *.js tests/*.mjs tools/*.mjs; do node --check "$f"; done
     python3 -m json.tool manifest.json >/dev/null
+    for f in _locales/*/messages.json; do python3 -m json.tool "$f" >/dev/null; done
+    bash -n tools/browser-check.sh
 
 # lint + test
 check: lint test
@@ -33,3 +35,11 @@ screens:
 # Архив для Chrome Web Store: только то, что нужно расширению (без тестов, инструментов, метки разработки)
 pack: check
     rm -f tabswitch.zip && zip -qr tabswitch.zip manifest.json *.js *.html _locales icons/icon-*.png && unzip -l tabswitch.zip | tail -1
+
+# Команды Chrome: закрытие и создание вкладки, назначения клавиш
+test-commands:
+    node --test tests/commands.test.mjs
+
+# Настоящий Chromium: назначения клавиш, скриншот и консоль; физические клавиши проверяются вручную
+browser-check:
+    bash tools/browser-check.sh

@@ -221,7 +221,7 @@ test('много раз подряд (открыл-закрыл, открыл-п
   assert.equal(popups, 0);
 });
 
-test('Alt+W — на прошлую вкладку и обратно', async () => {
+test('Alt+A — на прошлую вкладку и обратно', async () => {
   const [, b, c] = await h.openTabs('aw', 'bw', 'cw');
   await h.toggle();
   await new Promise((r) => setTimeout(r, 200));
@@ -245,7 +245,7 @@ test('светлая тема Chrome — окошко светлое, тёмна
   assert.equal(light, 'rgb(239, 241, 245)');
 });
 
-test('Alt+← / Alt+→ — соседняя вкладка в этом окне, с края — на другой край', async () => {
+test('команды соседних вкладок — соседняя вкладка в этом окне, с края — на другой край', async () => {
   await h.openTabs('n1', 'n2', 'n3');
   await h.step(-1);
   await new Promise((r) => setTimeout(r, 150));

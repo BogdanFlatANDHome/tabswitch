@@ -4,7 +4,7 @@
     "description": "Extension name"
   },
   "description": {
-    "message": "Alt+Q — все вкладки списком по центру: с номерами, по окнам, с мгновенным поиском. Alt+W — прошлая вкладка.",
+    "message": "Alt+Q — список вкладок с поиском. Alt+W — закрыть текущую вкладку. Alt+T — новая вкладка.",
     "description": "Store/manifest description"
   },
   "cmdOpen": {
@@ -44,5 +44,11 @@
   },
   "cmdRight": {
     "message": "Вкладка справа"
+  },
+  "cmdClose": {
+    "message": "Закрыть текущую вкладку"
+  },
+  "cmdNew": {
+    "message": "Открыть новую вкладку"
   }
 }

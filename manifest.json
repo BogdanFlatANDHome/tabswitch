@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "__MSG_name__",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "__MSG_description__",
   "minimum_chrome_version": "121",
   "background": {
@@ -21,22 +21,28 @@
       "description": "__MSG_cmdOpen__"
     },
     "toggle-last": {
+      "description": "__MSG_cmdToggle__",
       "suggested_key": {
-        "default": "Alt+W"
-      },
-      "description": "__MSG_cmdToggle__"
+        "default": "Alt+A"
+      }
     },
     "tab-left": {
-      "suggested_key": {
-        "default": "Alt+Left"
-      },
       "description": "__MSG_cmdLeft__"
     },
     "tab-right": {
-      "suggested_key": {
-        "default": "Alt+Right"
-      },
       "description": "__MSG_cmdRight__"
+    },
+    "close-current": {
+      "suggested_key": {
+        "default": "Alt+W"
+      },
+      "description": "__MSG_cmdClose__"
+    },
+    "new-tab": {
+      "suggested_key": {
+        "default": "Alt+T"
+      },
+      "description": "__MSG_cmdNew__"
     }
   },
   "web_accessible_resources": [

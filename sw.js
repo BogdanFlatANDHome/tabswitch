@@ -112,7 +112,7 @@ chrome.windows.onRemoved.addListener(async (id) => {
   if (popupId === id) await chrome.storage.session.remove('popupId');
 });
 
-// Alt+W — на вкладку, где был до этой (по всем окнам), и обратно
+// Команда toggle-last — на вкладку, где был до этой (по всем окнам), и обратно
 async function toggleLast() {
   const cur = await currentTab();
   const tabs = await chrome.tabs.query({ windowType: 'normal' });
@@ -134,6 +134,8 @@ self.stepTab = stepTab;
 
 chrome.commands.onCommand.addListener((cmd) => {
   const run = { 'open-switcher': openSwitcher, 'toggle-last': toggleLast,
+    'new-tab': async () => { const tab = await currentTab(); await chrome.tabs.create({ windowId: tab.windowId }); },
+    'close-current': async () => { const tab = await currentTab(); await chrome.tabs.remove(tab.id); },
     'tab-left': () => stepTab(-1), 'tab-right': () => stepTab(1) }[cmd];
   (async () => { if (!(await reloadIfChanged())) await run?.(); })().catch((e) => console.error('tabswitch:', e));
 });

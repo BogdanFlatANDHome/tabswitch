@@ -4,7 +4,7 @@
     "description": "Extension name"
   },
   "description": {
-    "message": "Alt+Q: every tab in one centered list, numbered and grouped by window, with instant search. Alt+W: previous tab.",
+    "message": "Alt+Q: searchable tab list. Alt+W: close current tab. Alt+T: new tab.",
     "description": "Store/manifest description"
   },
   "cmdOpen": {
@@ -44,5 +44,11 @@
   },
   "cmdRight": {
     "message": "Tab to the right"
+  },
+  "cmdClose": {
+    "message": "Close the current tab"
+  },
+  "cmdNew": {
+    "message": "Open a new tab"
   }
 }
